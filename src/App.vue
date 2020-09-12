@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="bg flex justify-center items-center h-screen w-screen text-white">
+    <Choose />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import Choose from './components/Choose'
+  export default {
+    name: 'App',
+    components:{
+      Choose,
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import 'assets/css/style.css';
+
+*, *::before, *::after{
+  outline: none !important;
+}
+
+.bg{
+  background-image: url('assets/img/background.jpg');
+  background-size: cover;
 }
 </style>
