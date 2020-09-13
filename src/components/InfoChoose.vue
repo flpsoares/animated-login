@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div :class="`z-${zindex}`" class="flex flex-col">
     <span class="text-3xl">
       {{header}}
     </span>
@@ -7,7 +7,7 @@
       {{content}}
     </span>
     <div class="flex mt-8 w-full">
-      <button class="w-32 h-9 rounded-md border border-white">
+      <button @click="toggleRegister" class="w-32 h-9 rounded-md border border-white">
         {{button}}
       </button>
     </div>
@@ -20,7 +20,14 @@ export default {
   props: {
     header: String,
     content: String,
-    button: String
+    button: String,
+    zindex: String
+  },
+  methods: {
+    toggleRegister(){
+      this.$emit('toggle')
+      this.$store.commit('toggleRegister')
+    }
   }
 }
 </script>
