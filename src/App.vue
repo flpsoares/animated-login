@@ -19,6 +19,7 @@
 
 *, *::before, *::after{
   outline: none !important;
+  
 }
 
 .bg{
